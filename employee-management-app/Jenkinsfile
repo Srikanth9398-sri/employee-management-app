@@ -17,14 +17,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building application...'
-                sh 'mvn clean package'
+                sh 'cd employee-management-app && mvn clean package'
             }
         }
     }
 
     post {
         success {
-            archiveArtifacts artifacts: 'target/*.jar'
+            archiveArtifacts artifacts: 'employee-management-app/target/*.jar'
             echo 'Build successful and artifact archived.'
         }
 
