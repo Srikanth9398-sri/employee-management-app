@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employee-app-green
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: employee-app
+      version: green
+
+  template:
+    metadata:
+      labels:
+        app: employee-app
+        version: green
+
+    spec:
+      containers:
+      - name: employee-app
+        image: srikanth7036/employee-app:v2
+
+        ports:
+        - containerPort: 8081

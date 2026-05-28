@@ -7,10 +7,12 @@ spec:
   selector:
     matchLabels:
       app: employee-app
+      version: blue  
   template:
     metadata:
       labels:
         app: employee-app
+        version: blue  
     spec:
       containers:
       - name: employee-app

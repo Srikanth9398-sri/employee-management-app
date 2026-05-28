@@ -10,7 +10,7 @@ public class EmployeeController {
 
     @GetMapping("/")
     public String home() {
-        return "Employee Management App is running!";
+        return "Employee Management App version 2 is running!";
     }
 
     @GetMapping("/employees")
@@ -19,7 +19,9 @@ public class EmployeeController {
                 "Srikanth",
                 "Rahul",
                 "Anjali",
-                "Priya"
+                "Priya",
+		"DevOps-Team",
+	       	"Kubernetes-Team"
         );
     }
 
