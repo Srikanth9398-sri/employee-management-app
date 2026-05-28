@@ -22,14 +22,14 @@ pipeline {
         stage('Build Maven Package') {
             steps {
                 echo 'Building Spring Boot application...'
-                sh 'cd employee-management-app && mvn clean package'
+                sh 'mvn clean package'
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
-                sh 'cd employee-management-app && docker build -t $IMAGE_NAME .'
+                sh 'docker build -t $IMAGE_NAME .'
             }
         }
 
@@ -56,7 +56,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 echo 'Deploying application to Kubernetes...'
-                sh 'cd employee-management-app && kubectl apply -f deployment.yaml'
+                sh 'kubectl apply -f deployment.yaml'
             }
         }
 
